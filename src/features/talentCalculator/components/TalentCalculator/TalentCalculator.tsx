@@ -12,8 +12,8 @@ const TalentCalculator = () => {
       <h1 className={styles.heading}>
         TitanStar Legends - Rune Mastery Loadout Talent Calcualtor 9000
       </h1>
-      <main className={styles.treeContainer}>
-        <div className={styles.tree}>
+      <main className={styles.pathContainer}>
+        <div className={styles.pathList}>
           {state.paths.map((path) => (
             <Path
               key={path.id}
