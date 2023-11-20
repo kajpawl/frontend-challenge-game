@@ -1,0 +1,15 @@
+@use 'sass:color';
+
+$primary: #3A5168;
+$secondary: #4D4D4D;
+$accent: #6DABEA;
+
+$background-app: #0E0E0E;
+$background-primary: transparentize($secondary, 0.4);
+$background-secondary: transparentize($secondary, 0.8);
+
+$border: transparentize($primary, 0.8);
+$border-path: transparentize($primary, 0.8);
+
+$text: #FFFFFF;
+$text-secondary: #D0D1D2;

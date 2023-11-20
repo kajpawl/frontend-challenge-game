@@ -1,0 +1,9 @@
+@use "src/styles/colors";
+
+.heading {
+  padding: 5px 0;
+  background-color: colors.$background-secondary;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 400;
+}

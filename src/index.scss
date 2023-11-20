@@ -1,0 +1,17 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+  font-family: fonts.$primary;
+  color: colors.$text;
+  background-color: colors.$background-app;
+}
+
+body {
+  margin: 0 auto;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
