@@ -1,5 +1,6 @@
 @use 'styles/colors';
 @use 'styles/fonts';
+@use 'styles/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
@@ -9,9 +10,7 @@
 }
 
 body {
+  @include mixins.flex-center;
   margin: 0 auto;
   height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

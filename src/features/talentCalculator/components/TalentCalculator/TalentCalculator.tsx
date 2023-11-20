@@ -23,7 +23,7 @@ const TalentCalculator = () => {
             />
           ))}
         </div>
-        <Summary pointsSpent={state.talentPointsSpent} />
+        <Summary className={styles.summaryMargin} pointsSpent={state.talentPointsSpent} />
       </main>
     </main>
   );

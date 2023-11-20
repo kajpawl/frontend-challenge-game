@@ -1,12 +1,14 @@
+import clsx from 'clsx';
 import { MAX_TALENT_POINTS } from '../../constants';
 import styles from './Summary.module.scss';
 
 interface SummaryProps {
+  className?: string;
   pointsSpent: number;
 }
 
-const Summary = ({ pointsSpent }: SummaryProps) => (
-  <div className={styles.pointsSummary}>
+const Summary = ({ className, pointsSpent }: SummaryProps) => (
+  <div className={clsx(styles.pointsSummary, className)}>
     <div>
       {pointsSpent} / {MAX_TALENT_POINTS}
     </div>

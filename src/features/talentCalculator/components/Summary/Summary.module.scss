@@ -1,11 +1,9 @@
 @use 'src/styles/colors';
+@use 'src/styles/mixins';
 
 .pointsSummary {
-  display: flex;
+  @include mixins.flex-center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 50px;
   padding: 16px 24px;
   border: 1px solid colors.$border;
   background-color: colors.$background;

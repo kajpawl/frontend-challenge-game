@@ -1,5 +1,6 @@
 @use 'src/styles/breakpoints';
 @use 'src/styles/colors';
+@use 'src/styles/mixins';
 
 .root {
   margin: 0 auto;
@@ -20,10 +21,8 @@
 }
 
 .pathContainer {
-  display: flex;
+  @include mixins.flex-center;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   padding: 75px 0;
   row-gap: 60px;
   height: 100%;
@@ -34,6 +33,10 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
+}
+
+.summaryMargin {
+  margin: 0 50px;
 }
 
 @media screen and (max-width: breakpoints.$md) {

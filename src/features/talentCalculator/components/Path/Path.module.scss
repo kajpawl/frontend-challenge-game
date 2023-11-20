@@ -1,5 +1,6 @@
 @use 'src/styles/breakpoints';
 @use 'src/styles/colors';
+@use 'src/styles/mixins';
 
 .name {
   text-transform: uppercase;
@@ -7,9 +8,7 @@
 }
 
 .path {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex-center;
   gap: 45px;
 }
 
