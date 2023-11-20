@@ -11,14 +11,14 @@ const reduceTalentActivate = (
   state: TalentsPathsState,
   { pathId, talentIndex }: TalentPathsAction
 ) => {
-  if (state.talentPointsSpent >= MAX_TALENT_POINTS) return state;
+  if (state.talentPointsSpent >= MAX_TALENT_POINTS) return;
 
   const pathIndex = state.paths.findIndex((path) => path.id === pathId);
   const pathTalents = state.paths[pathIndex].items;
 
-  if (pathTalents[talentIndex].isActive) return state;
+  if (pathTalents[talentIndex].isActive) return;
   if (talentIndex > 0 && pathTalents[talentIndex - 1].isActive === false)
-    return state;
+    return;
 
   const newState = structuredClone(state);
   newState.paths[pathIndex].items[talentIndex].isActive = true;
@@ -34,12 +34,12 @@ const reduceTalentDeactivate = (
   const pathIndex = state.paths.findIndex((path) => path.id === pathId);
   const pathTalents = state.paths[pathIndex].items;
 
-  if (!pathTalents[talentIndex].isActive) return state;
+  if (!pathTalents[talentIndex].isActive) return;
   if (
     talentIndex !== pathTalents.length - 1 &&
     pathTalents[talentIndex + 1].isActive === true
   )
-    return state;
+    return;
 
   const newState = structuredClone(state);
   newState.paths[pathIndex].items[talentIndex].isActive = false;
@@ -54,9 +54,9 @@ const talentsReducer = (
 ) => {
   switch (action.type) {
     case TalentAction.Activate:
-      return reduceTalentActivate(state, action);
+      return reduceTalentActivate(state, action) ?? state;
     case TalentAction.Dectivate:
-      return reduceTalentDeactivate(state, action);
+      return reduceTalentDeactivate(state, action) ?? state;
     default:
       return state;
   }
