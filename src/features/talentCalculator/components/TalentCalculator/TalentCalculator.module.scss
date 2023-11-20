@@ -1,4 +1,4 @@
-@use "src/styles/colors";
+@use 'src/styles/colors';
 
 .root {
   margin: 0 auto;
@@ -9,34 +9,20 @@
   background-size: cover;
 }
 
+.heading {
+  padding: 5px 0;
+  background-color: colors.$background-secondary;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
 .treeContainer {
   display: flex;
   align-items: center;
   padding: 75px 0;
   height: 100%;
 }
-
-// summary
-
-.pointsSummary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 50px;
-  padding: 16px 24px;
-  border: 1px solid colors.$border;
-  background-color: colors.$background-app;
-  text-align: center;
-  font-size: 1.6rem;
-}
-
-.subtitle {
-  color: colors.$primary;
-}
-
-
-// tree
 
 .tree {
   flex-grow: 1;
@@ -45,18 +31,3 @@
   gap: 60px;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  gap: 45px;
-}
-
-.pathName {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.path {
-  display: flex;
-  gap: 120px;
-}

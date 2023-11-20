@@ -1,4 +1,4 @@
-@use "src/styles/colors";
+@use 'src/styles/colors';
 
 $icon-width: 50;
 $icon-height: 50;
@@ -8,10 +8,18 @@ $icon-height: 50;
   padding: 5px;
   border: none;
   background-color: transparent;
-  background-image:  linear-gradient(colors.$secondary 0 50%, colors.$background-secondary 50%, colors.$secondary 100%);
-  
+  background-image: linear-gradient(
+    colors.$secondary 0 50%,
+    colors.$background-secondary 50%,
+    colors.$secondary 100%
+  );
+
   &.active {
-    background-image:  linear-gradient(colors.$accent 0 50%, colors.$background-secondary 50%, colors.$accent 100%);
+    background-image: linear-gradient(
+      colors.$accent 0 50%,
+      colors.$background-secondary 50%,
+      colors.$accent 100%
+    );
     box-shadow: 0 0 5px 2px colors.$primary;
   }
 
@@ -22,24 +30,6 @@ $icon-height: 50;
   &:hover .icon,
   &.active .icon {
     background-position-y: 0;
-  }
-  
-  &:not(:first-child)::before {
-    content: '';
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 120px;
-    height: 16px;
-    background-color: colors.$background-primary;
-    border-top: 2px solid colors.$secondary;
-    border-bottom: 2px solid colors.$secondary;
-    opacity: 0.4;
-  }
-  
-  &.active::before {
-    opacity: 1;
   }
 }
 
@@ -53,3 +43,4 @@ $icon-height: 50;
 :export {
   iconWidth: $icon-width;
 }
+

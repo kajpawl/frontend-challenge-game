@@ -1,7 +1,6 @@
 import { TalentCalculator } from './features/talentCalculator';
 
-const App = () => (
-  <TalentCalculator />
-);
+const App = () => <TalentCalculator />;
 
 export default App;
+

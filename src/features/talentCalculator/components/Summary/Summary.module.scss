@@ -1,0 +1,19 @@
+@use 'src/styles/colors';
+
+.pointsSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 50px;
+  padding: 16px 24px;
+  border: 1px solid colors.$border;
+  background-color: colors.$background;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  color: colors.$primary;
+}
+

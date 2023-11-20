@@ -1,7 +1,11 @@
 import { useReducer } from 'react';
-import { TalentAction, TalentPathsAction, TalentsPathsState } from '../../types';
 import { MAX_TALENT_POINTS } from '../../constants';
 import { initialTalentsState } from '../../data';
+import {
+  TalentAction,
+  TalentPathsAction,
+  TalentsPathsState,
+} from '../../types';
 
 const reduceTalentActivate = (
   state: TalentsPathsState,
