@@ -17,8 +17,10 @@ const reduceTalentActivate = (
   const pathTalents = state.paths[pathIndex].items;
 
   if (pathTalents[talentIndex].isActive) return;
-  if (talentIndex > 0 && pathTalents[talentIndex - 1].isActive === false)
-    return;
+
+  const isPreviousItemInactive =
+    talentIndex > 0 && pathTalents[talentIndex - 1].isActive === false;
+  if (isPreviousItemInactive) return;
 
   const newState = structuredClone(state);
   newState.paths[pathIndex].items[talentIndex].isActive = true;
@@ -35,11 +37,11 @@ const reduceTalentDeactivate = (
   const pathTalents = state.paths[pathIndex].items;
 
   if (!pathTalents[talentIndex].isActive) return;
-  if (
+
+  const isNextItemActive =
     talentIndex !== pathTalents.length - 1 &&
-    pathTalents[talentIndex + 1].isActive === true
-  )
-    return;
+    pathTalents[talentIndex + 1].isActive === true;
+  if (isNextItemActive) return;
 
   const newState = structuredClone(state);
   newState.paths[pathIndex].items[talentIndex].isActive = false;
