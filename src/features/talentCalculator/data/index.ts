@@ -2,7 +2,6 @@ import { TalentsPath, TalentsPathsState } from '../types';
 
 export const initialTalentPaths: TalentsPath[] = [
   {
-    id: 'path1',
     name: 'Talent Path 1',
     items: [
       { spriteIndex: 0, isActive: false },
@@ -12,7 +11,6 @@ export const initialTalentPaths: TalentsPath[] = [
     ],
   },
   {
-    id: 'path2',
     name: 'Talent Path 2',
     items: [
       { spriteIndex: 4, isActive: false },

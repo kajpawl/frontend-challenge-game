@@ -9,11 +9,9 @@ import {
 
 const reduceTalentActivate = (
   state: TalentsPathsState,
-  { pathId, talentIndex }: TalentPathsAction
+  { pathIndex, talentIndex }: TalentPathsAction
 ) => {
   if (state.talentPointsSpent >= MAX_TALENT_POINTS) return;
-
-  const pathIndex = state.paths.findIndex((path) => path.id === pathId);
   const pathTalents = state.paths[pathIndex].items;
 
   if (pathTalents[talentIndex].isActive) return;
@@ -31,11 +29,9 @@ const reduceTalentActivate = (
 
 const reduceTalentDeactivate = (
   state: TalentsPathsState,
-  { pathId, talentIndex }: TalentPathsAction
+  { pathIndex, talentIndex }: TalentPathsAction
 ) => {
-  const pathIndex = state.paths.findIndex((path) => path.id === pathId);
   const pathTalents = state.paths[pathIndex].items;
-
   if (!pathTalents[talentIndex].isActive) return;
 
   const isNextItemActive =
@@ -67,11 +63,11 @@ const talentsReducer = (
 export const useTalentCalculatorState = () => {
   const [state, dispatch] = useReducer(talentsReducer, initialTalentsState);
 
-  const handleTalentActivate = (pathId: string, talentIndex: number) =>
-    dispatch({ type: TalentAction.Activate, pathId, talentIndex });
+  const handleTalentActivate = (pathIndex: number, talentIndex: number) =>
+    dispatch({ type: TalentAction.Activate, pathIndex, talentIndex });
 
-  const handleTalentDeactivate = (pathId: string, talentIndex: number) =>
-    dispatch({ type: TalentAction.Dectivate, pathId, talentIndex });
+  const handleTalentDeactivate = (pathIndex: number, talentIndex: number) =>
+    dispatch({ type: TalentAction.Dectivate, pathIndex, talentIndex });
 
   return { state, handleTalentActivate, handleTalentDeactivate };
 };

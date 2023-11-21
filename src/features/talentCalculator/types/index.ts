@@ -4,7 +4,6 @@ export interface Talent {
 }
 
 export interface TalentsPath {
-  id: string;
   name: string;
   items: Talent[];
 }
@@ -21,6 +20,6 @@ export enum TalentAction {
 
 export interface TalentPathsAction {
   type: TalentAction;
-  pathId: string;
+  pathIndex: number;
   talentIndex: number;
 }

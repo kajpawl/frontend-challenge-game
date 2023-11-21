@@ -6,12 +6,14 @@ import styles from './Path.module.scss';
 
 interface TalentsPathProps {
   pathData: TalentsPath;
-  onTalentActivate: (pathId: string, index: number) => void;
-  onTalentDeactivate: (pathId: string, index: number) => void;
+  pathIndex: number;
+  onTalentActivate: (pathIndex: number, talentIndex: number) => void;
+  onTalentDeactivate: (pathIndex: number, talentIndex: number) => void;
 }
 
 const Path = ({
   pathData,
+  pathIndex,
   onTalentActivate,
   onTalentDeactivate,
 }: TalentsPathProps) => (
@@ -30,8 +32,8 @@ const Path = ({
           )}
           <TalentButton
             isActive={talent.isActive}
-            onActivate={() => onTalentActivate(pathData.id, index)}
-            onDeactivate={() => onTalentDeactivate(pathData.id, index)}
+            onActivate={() => onTalentActivate(pathIndex, index)}
+            onDeactivate={() => onTalentDeactivate(pathIndex, index)}
             spriteIndex={talent.spriteIndex}
           />
         </Fragment>
