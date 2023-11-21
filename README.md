@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Front-End Developer Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
+This repo contains a tool for a fictitious game called “TitanStar Legends”, made as a front-end coding challenge.
 
-Currently, two official plugins are available:
+The app setup was based on Vite-React template with TypeScript, and was written using node in version 18.17.1.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Approaches
+The application has implemented all requirements defined in the challenge.
+The application utilizes feature-based approach for file structure (single hermetic feature).
+The state management is handled by the `useReducer` hook.
+Styling made using `SCSS`, with usage of `minireset.css` library for resetting styles.
 
-## Expanding the ESLint configuration
+## Tasks
+1. Run `npm install` script in your terminal.
+2. Next, run `npm run dev` to run the application in development mode.
+3. Et voila - application  should be running on `http://localhost:5173/` :)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+...unless you're using `yarn`, then run `yarn` and `yarn dev` in sequence.  
